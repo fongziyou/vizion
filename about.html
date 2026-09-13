@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | Vizion Pte Ltd</title>
+
+    <meta
+        name="description"
+        content="Learn about Vizion Pte Ltd, our manufacturing experience, supply chain expertise, automation capabilities and regional business network across Asia."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: #071a31;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(1180px, calc(100% - 40px));
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid #e8ebef;
+        }
+
+        .nav-inner {
+            width: min(1180px, calc(100% - 40px));
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            width: 145px;
+            max-height: 52px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            color: #64707d;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: 0.25s ease;
+        }
+
+        .nav-links a:not(.contact-btn)::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 2px;
+
+            background: #d69b32;
+
+            transition: width 0.25s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #071a31;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .contact-btn {
+            padding: 11px 18px;
+
+            border-radius: 100px;
+
+            background: #071a31;
+
+            color: white !important;
+        }
+
+        .contact-btn:hover {
+            background: #d69b32;
+            color: #071a31 !important;
+
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu {
+            display: none;
+
+            border: 0;
+            background: transparent;
+
+            color: #071a31;
+
+            font-size: 21px;
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           INTRO
+        ===================================================== */
+
+        .about-intro {
+            padding: 105px 0 95px;
+
+            background:
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(214, 155, 50, 0.09),
+                    transparent 26%
+                ),
+                #f7f8fa;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+
+            gap: 90px;
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            color: #ad7620;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+
+            width: 30px;
+            height: 2px;
+
+            background: #d69b32;
+        }
+
+        .intro-content {
+            opacity: 0;
+            transform: translateY(25px);
+
+            animation: introIn 0.8s ease forwards;
+        }
+
+        @keyframes introIn {
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .intro-content h1 {
+            max-width: 850px;
+
+            margin-bottom: 30px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: clamp(45px, 6vw, 76px);
+            line-height: 1.03;
+
+            letter-spacing: -4px;
+        }
+
+        .intro-content h1 span {
+            color: #d69b32;
+        }
+
+        .intro-description {
+            max-width: 720px;
+
+            color: #687584;
+
+            font-size: 16px;
+            line-height: 1.85;
+        }
+
+
+        /* =====================================================
+           EXPERIENCE HIGHLIGHT
+        ===================================================== */
+
+        .experience-highlight {
+            padding: 100px 0;
+        }
+
+        .experience-box {
+            position: relative;
+
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+
+            gap: 70px;
+            align-items: center;
+
+            padding: 65px;
+
+            overflow: hidden;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #051426,
+                    #082b4e
+                );
+
+            color: white;
+        }
+
+        .experience-box::after {
+            content: "25+";
+
+            position: absolute;
+            right: -25px;
+            bottom: -80px;
+
+            color: rgba(255, 255, 255, 0.035);
+
+            font-family: "Manrope", sans-serif;
+            font-size: 240px;
+            font-weight: 800;
+
+            letter-spacing: -18px;
+        }
+
+        .years {
+            position: relative;
+            z-index: 2;
+
+            border-right:
+                1px solid rgba(255, 255, 255, 0.13);
+        }
+
+        .years-number {
+            display: block;
+
+            color: #d69b32;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(80px, 10vw, 135px);
+            font-weight: 800;
+
+            line-height: 0.9;
+
+            letter-spacing: -8px;
+        }
+
+        .years-label {
+            display: block;
+
+            margin-top: 18px;
+
+            color: rgba(255, 255, 255, 0.55);
+
+            font-size: 12px;
+            font-weight: 600;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+        }
+
+        .experience-copy {
+            position: relative;
+            z-index: 2;
+        }
+
+        .experience-copy h2 {
+            max-width: 650px;
+
+            margin-bottom: 22px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(31px, 4vw, 48px);
+
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .experience-copy p {
+            max-width: 620px;
+
+            color: rgba(255, 255, 255, 0.55);
+
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           EXPERIENCE AREAS
+        ===================================================== */
+
+        .professional {
+            padding: 30px 0 110px;
+        }
+
+        .section-heading {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+
+            gap: 90px;
+
+            margin-bottom: 55px;
+        }
+
+        .section-heading h2 {
+            max-width: 700px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(35px, 5vw, 54px);
+
+            line-height: 1.08;
+            letter-spacing: -3px;
+        }
+
+        .experience-list {
+            border-top: 1px solid #dfe4e9;
+        }
+
+        .experience-item {
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+
+            gap: 25px;
+            align-items: center;
+
+            padding: 28px 10px;
+
+            border-bottom: 1px solid #dfe4e9;
+
+            transition:
+                background 0.3s ease,
+                padding 0.3s ease;
+        }
+
+        .experience-item:hover {
+            padding-left: 22px;
+            padding-right: 22px;
+
+            background: #f7f8fa;
+        }
+
+        .experience-number {
+            color: #d69b32;
+
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .experience-item h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 18px;
+        }
+
+        .experience-item i {
+            color: #bbc3cb;
+
+            transition: 0.3s ease;
+        }
+
+        .experience-item:hover i {
+            color: #d69b32;
+
+            transform: translateX(5px);
+        }
+
+
+        /* =====================================================
+           CORE EXPERTISE
+        ===================================================== */
+
+        .expertise {
+            padding: 110px 0;
+
+            background: #f6f7f9;
+        }
+
+        .expertise-header {
+            max-width: 700px;
+
+            margin-bottom: 55px;
+        }
+
+        .expertise-header h2 {
+            margin-top: 18px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(37px, 5vw, 55px);
+
+            line-height: 1.08;
+            letter-spacing: -3px;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 14px;
+        }
+
+        .expertise-card {
+            min-height: 260px;
+
+            padding: 30px;
+
+            display: flex;
+            flex-direction: column;
+
+            border: 1px solid #e1e5e9;
+            border-radius: 19px;
+
+            background: white;
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease,
+                background 0.35s ease,
+                color 0.35s ease;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-8px);
+
+            background: #071a31;
+            color: white;
+
+            box-shadow:
+                0 25px 55px rgba(7, 26, 49, 0.12);
+        }
+
+        .expertise-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: auto;
+
+            border-radius: 13px;
+
+            background: #f5ead7;
+
+            color: #b87919;
+
+            transition: 0.3s ease;
+        }
+
+        .expertise-card:hover .expertise-icon {
+            background: #d69b32;
+            color: #071a31;
+
+            transform: rotate(-6deg);
+        }
+
+        .expertise-card h3 {
+            margin-top: 45px;
+            margin-bottom: 12px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: 17px;
+        }
+
+        .expertise-card p {
+            color: #778391;
+
+            font-size: 12px;
+            line-height: 1.7;
+
+            transition: color 0.3s ease;
+        }
+
+        .expertise-card:hover p {
+            color: rgba(255, 255, 255, 0.48);
+        }
+
+
+        /* =====================================================
+           INDUSTRY BACKGROUND
+        ===================================================== */
+
+        .industry {
+            padding: 110px 0;
+        }
+
+        .industry-layout {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 100px;
+        }
+
+        .industry-heading {
+            position: sticky;
+            top: 120px;
+
+            height: fit-content;
+        }
+
+        .industry-heading h2 {
+            margin-top: 18px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(38px, 5vw, 55px);
+
+            line-height: 1.08;
+            letter-spacing: -3px;
+        }
+
+        .industry-heading p {
+            max-width: 400px;
+
+            margin-top: 20px;
+
+            color: #778391;
+
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .industry-items {
+            border-top: 1px solid #dfe4e9;
+        }
+
+        .industry-item {
+            display: grid;
+            grid-template-columns: 55px 1fr;
+
+            gap: 25px;
+
+            padding: 32px 5px;
+
+            border-bottom: 1px solid #dfe4e9;
+        }
+
+        .industry-item i {
+            color: #d69b32;
+
+            font-size: 20px;
+        }
+
+        .industry-item h3 {
+            margin-bottom: 10px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: 18px;
+        }
+
+        .industry-item p {
+            color: #778391;
+
+            font-size: 13px;
+            line-height: 1.75;
+        }
+
+
+        /* =====================================================
+           VALUES
+        ===================================================== */
+
+        .values {
+            padding: 100px 0;
+
+            background: #071a31;
+            color: white;
+        }
+
+        .values-header {
+            max-width: 650px;
+
+            margin-bottom: 55px;
+        }
+
+        .values-header .eyebrow {
+            color: #d69b32;
+        }
+
+        .values-header h2 {
+            margin-top: 18px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(38px, 5vw, 55px);
+
+            letter-spacing: -3px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.12);
+
+            border-left:
+                1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .value {
+            min-height: 190px;
+
+            padding: 25px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            border-right:
+                1px solid rgba(255, 255, 255, 0.12);
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.12);
+
+            transition: 0.3s ease;
+        }
+
+        .value:hover {
+            background: #d69b32;
+            color: #071a31;
+        }
+
+        .value span {
+            color: #d69b32;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            transition: color 0.3s ease;
+        }
+
+        .value:hover span {
+            color: #071a31;
+        }
+
+        .value h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 17px;
+        }
+
+
+        /* =====================================================
+           MARKETS
+        ===================================================== */
+
+        .markets {
+            padding: 110px 0;
+
+            background: #f6f7f9;
+        }
+
+        .market-layout {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 90px;
+            align-items: center;
+        }
+
+        .market-copy h2 {
+            margin-top: 18px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(38px, 5vw, 57px);
+
+            line-height: 1.07;
+            letter-spacing: -3px;
+        }
+
+        .market-copy p {
+            max-width: 480px;
+
+            margin-top: 22px;
+
+            color: #778391;
+
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 10px;
+        }
+
+        .market {
+            min-height: 92px;
+
+            padding: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            border: 1px solid #dfe4e9;
+            border-radius: 12px;
+
+            background: white;
+
+            transition: 0.3s ease;
+        }
+
+        .market:hover {
+            transform: translateY(-5px);
+
+            border-color: #d69b32;
+
+            box-shadow:
+                0 12px 30px rgba(7, 26, 49, 0.07);
+        }
+
+        .market span {
+            font-family: "Manrope", sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .market i {
+            color: #d69b32;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta {
+            padding: 95px 0;
+
+            background: white;
+        }
+
+        .cta-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 50px;
+
+            padding: 55px 60px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #071a31,
+                    #0a3157
+                );
+
+            color: white;
+        }
+
+        .cta-box h2 {
+            max-width: 700px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(31px, 4vw, 48px);
+
+            line-height: 1.08;
+            letter-spacing: -2px;
+        }
+
+        .cta-box h2 span {
+            color: #d69b32;
+        }
+
+        .cta-button {
+            flex-shrink: 0;
+
+            min-height: 52px;
+
+            padding: 0 23px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            border-radius: 100px;
+
+            background: #d69b32;
+
+            color: #071a31;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            transition: 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+
+            background: #e6b55c;
+        }
+
+        .cta-button i {
+            transition: 0.3s ease;
+        }
+
+        .cta-button:hover i {
+            transform: translateX(4px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            padding: 50px 0 25px;
+
+            background: #020b15;
+            color: white;
+        }
+
+        .footer-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            gap: 50px;
+
+            padding-bottom: 40px;
+        }
+
+        .footer-logo img {
+            width: 145px;
+
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            max-width: 350px;
+
+            color: rgba(255, 255, 255, 0.38);
+
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 25px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.45);
+
+            font-size: 12px;
+
+            transition: 0.25s ease;
+        }
+
+        .footer-links a:hover {
+            color: #d69b32;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding-top: 23px;
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.08);
+
+            color: rgba(255, 255, 255, 0.28);
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ===================================================== */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(30px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 950px) {
+
+            .intro-grid,
+            .section-heading,
+            .industry-layout,
+            .market-layout {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+            .experience-box {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+            .years {
+                border-right: 0;
+
+                padding-bottom: 35px;
+
+                border-bottom:
+                    1px solid rgba(255, 255, 255, 0.13);
+            }
+
+            .expertise-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .industry-heading {
+                position: static;
+            }
+
+            .values-grid {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+            .cta-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .nav-links {
+                position: absolute;
+
+                left: 20px;
+                right: 20px;
+                top: 68px;
+
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+
+                gap: 0;
+
+                padding: 12px;
+
+                border: 1px solid #e4e8ed;
+                border-radius: 15px;
+
+                background: white;
+
+                box-shadow:
+                    0 20px 50px rgba(7, 26, 49, 0.12);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 13px;
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .contact-btn {
+                margin-top: 5px;
+
+                text-align: center;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .navbar {
+                height: 68px;
+            }
+
+            .logo img {
+                width: 120px;
+            }
+
+            .about-intro {
+                padding: 70px 0;
+            }
+
+            .intro-content h1 {
+                font-size: 46px;
+                letter-spacing: -2.5px;
+            }
+
+            .experience-highlight,
+            .expertise,
+            .industry,
+            .values,
+            .markets,
+            .cta {
+                padding: 75px 0;
+            }
+
+            .professional {
+                padding-bottom: 75px;
+            }
+
+            .experience-box {
+                padding: 35px 25px;
+
+                border-radius: 20px;
+            }
+
+            .years-number {
+                font-size: 90px;
+                letter-spacing: -6px;
+            }
+
+            .experience-item {
+                grid-template-columns: 45px 1fr;
+            }
+
+            .experience-item i {
+                display: none;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .expertise-card {
+                min-height: 220px;
+            }
+
+            .values-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .market-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .cta-box {
+                padding: 38px 25px;
+            }
+
+            .footer-top,
+            .footer-bottom {
+                flex-direction: column;
+            }
+
+        }
+
+
+        @media (max-width: 430px) {
+
+            .values-grid,
+            .market-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .value {
+                min-height: 130px;
+            }
+
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="index.html" class="logo">
+
+            <img
+                src="images/logo.png"
+                alt="Vizion Pte Ltd"
+            >
+
+        </a>
+
+
+        <nav class="nav-links" id="navLinks">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html" class="active">
+                About
+            </a>
+
+            <a href="index.html#products">
+                Products
+            </a>
+
+            <a href="index.html#expertise">
+                Expertise
+            </a>
+
+            <a
+                href="contact.html"
+                class="contact-btn"
+            >
+                Contact Us
+            </a>
+
+        </nav>
+
+
+        <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Open menu"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="about-intro">
+
+    <div class="container">
+
+        <div class="intro-grid">
+
+
+            <div>
+
+                <div class="eyebrow">
+                    About Vizion
+                </div>
+
+            </div>
+
+
+            <div class="intro-content">
+
+                <h1>
+
+                    Experience that drives
+
+                    <span>
+                        innovation.
+                    </span>
+
+                </h1>
+
+
+                <p class="intro-description">
+
+                    Vizion Pte Ltd brings together
+                    manufacturing experience, supply chain
+                    expertise and a forward-looking approach
+                    to automation and smart business solutions.
+
+                    Our focus is on helping businesses improve
+                    operations, strengthen supply chains and
+                    explore practical opportunities for
+                    digitalisation and automation.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     25+ YEARS
+===================================================== -->
+
+<section class="experience-highlight">
+
+    <div class="container">
+
+        <div class="experience-box reveal">
+
+
+            <div class="years">
+
+                <span class="years-number">
+                    25+
+                </span>
+
+                <span class="years-label">
+                    Years in Manufacturing Industry
+                </span>
+
+            </div>
+
+
+            <div class="experience-copy">
+
+                <h2>
+                    Built on practical industry experience.
+                </h2>
+
+
+                <p>
+
+                    With more than 25 years of experience
+                    in the manufacturing industry, Vizion's
+                    background spans supply chain management,
+                    business strategy, new factory setup,
+                    project implementation, smart manufacturing
+                    and process automation.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROFESSIONAL EXPERIENCE
+===================================================== -->
+
+<section class="professional">
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                Professional Experience
+            </div>
+
+
+            <h2>
+                From strategy to operational execution.
+            </h2>
+
+        </div>
+
+
+
+        <div class="experience-list">
+
+
+            <div class="experience-item reveal">
+
+                <span class="experience-number">
+                    01
+                </span>
+
+                <h3>
+                    Supply Chain & Business Strategy Leadership
+                </h3>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+
+            <div class="experience-item reveal">
+
+                <span class="experience-number">
+                    02
+                </span>
+
+                <h3>
+                    New Factory Setup & Project Implementation
+                </h3>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+
+            <div class="experience-item reveal">
+
+                <span class="experience-number">
+                    03
+                </span>
+
+                <h3>
+                    Smart Manufacturing & Process Automation
+                </h3>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+
+            <div class="experience-item reveal">
+
+                <span class="experience-number">
+                    04
+                </span>
+
+                <h3>
+                    Global Sourcing, Procurement & Logistics Excellence
+                </h3>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CORE EXPERTISE
+===================================================== -->
+
+<section class="expertise">
+
+    <div class="container">
+
+
+        <div class="expertise-header reveal">
+
+            <div class="eyebrow">
+                Core Expertise
+            </div>
+
+            <h2>
+                Knowledge across the entire operation.
+            </h2>
+
+        </div>
+
+
+
+        <div class="expertise-grid">
+
+
+            <article class="expertise-card reveal">
+
+                <div class="expertise-icon">
+                    <i class="fa-solid fa-link"></i>
+                </div>
+
+                <h3>
+                    Supply Chain Management
+                </h3>
+
+                <p>
+                    Supply chain management,
+                    planning and optimisation.
+                </p>
+
+            </article>
+
+
+
+            <article class="expertise-card reveal">
+
+                <div class="expertise-icon">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+
+                <h3>
+                    MRP & Inventory
+                </h3>
+
+                <p>
+                    MRP planning, procurement
+                    and inventory control.
+                </p>
+
+            </article>
+
+
+
+            <article class="expertise-card reveal">
+
+                <div class="expertise-icon">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+
+                <h3>
+                    Process Automation
+                </h3>
+
+                <p>
+                    Digitalisation, RPA and
+                    process automation initiatives.
+                </p>
+
+            </article>
+
+
+
+            <article class="expertise-card reveal">
+
+                <div class="expertise-icon">
+                    <i class="fa-solid fa-chart-column"></i>
+                </div>
+
+                <h3>
+                    Data & Power BI
+                </h3>
+
+                <p>
+                    Business reporting and
+                    Power BI solutions.
+                </p>
+
+            </article>
+
+
+
+            <article class="expertise-card reveal">
+
+                <div class="expertise-icon">
+                    <i class="fa-solid fa-industry"></i>
+                </div>
+
+                <h3>
+                    Smart Manufacturing
+                </h3>
+
+                <p>
+                    Smart manufacturing and
+                    business management experience.
+                </p>
+
+            </article>
+
+
+
+            <article class="expertise-card reveal">
+
+                <div class="expertise-icon">
+                    <i class="fa-solid fa-building-circle-check"></i>
+                </div>
+
+                <h3>
+                    Operational Excellence
+                </h3>
+
+                <p>
+                    Factory setup, project implementation
+                    and operational improvement.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INDUSTRY BACKGROUND
+===================================================== -->
+
+<section class="industry">
+
+    <div class="container">
+
+        <div class="industry-layout">
+
+
+            <div class="industry-heading reveal">
+
+                <div class="eyebrow">
+                    Industry Background
+                </div>
+
+
+                <h2>
+                    Experience beyond the boardroom.
+                </h2>
+
+
+                <p>
+
+                    Practical exposure across manufacturing,
+                    cleanroom operations, engineering,
+                    quality and continuous improvement.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="industry-items">
+
+
+                <div class="industry-item reveal">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <div>
+
+                        <h3>
+                            Cleanroom Operations
+                        </h3>
+
+                        <p>
+                            Experience with ISO Class 7
+                            and Class 8 cleanroom operations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="industry-item reveal">
+
+                    <i class="fa-solid fa-gears"></i>
+
+                    <div>
+
+                        <h3>
+                            Manufacturing Processes
+                        </h3>
+
+                        <p>
+                            Exposure to cutting, rolling,
+                            curing oven, spray, thread
+                            wrapping, coating and final packaging.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="industry-item reveal">
+
+                    <i class="fa-solid fa-microscope"></i>
+
+                    <div>
+
+                        <h3>
+                            Engineering & Quality
+                        </h3>
+
+                        <p>
+                            Engineering, quality management
+                            and continuous improvement experience.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="industry-item reveal">
+
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+
+                    <div>
+
+                        <h3>
+                            Automation & Logistics
+                        </h3>
+
+                        <p>
+                            Automation, logistics processes
+                            and reporting excellence.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VALUES
+===================================================== -->
+
+<section class="values">
+
+    <div class="container">
+
+
+        <div class="values-header reveal">
+
+            <div class="eyebrow">
+                Our Values
+            </div>
+
+            <h2>
+                What guides Vizion.
+            </h2>
+
+        </div>
+
+
+
+        <div class="values-grid">
+
+
+            <div class="value reveal">
+                <span>01</span>
+                <h3>Integrity</h3>
+            </div>
+
+
+            <div class="value reveal">
+                <span>02</span>
+                <h3>Innovation</h3>
+            </div>
+
+
+            <div class="value reveal">
+                <span>03</span>
+                <h3>Excellence</h3>
+            </div>
+
+
+            <div class="value reveal">
+                <span>04</span>
+                <h3>Collaboration</h3>
+            </div>
+
+
+            <div class="value reveal">
+                <span>05</span>
+                <h3>Sustainability</h3>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ASIAN MARKETS
+===================================================== -->
+
+<section class="markets">
+
+    <div class="container">
+
+        <div class="market-layout">
+
+
+            <div class="market-copy reveal">
+
+                <div class="eyebrow">
+                    Connecting Markets
+                </div>
+
+
+                <h2>
+                    Singapore to Asia.
+                </h2>
+
+
+                <p>
+
+                    Based in Singapore, Vizion connects
+                    business opportunities, sourcing and
+                    solutions across key Asian markets.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="market-grid">
+
+
+                <div class="market reveal">
+                    <span>Singapore</span>
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+
+                <div class="market reveal">
+                    <span>Malaysia</span>
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+
+                <div class="market reveal">
+                    <span>Indonesia</span>
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+
+                <div class="market reveal">
+                    <span>China</span>
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+
+                <div class="market reveal">
+                    <span>Hong Kong</span>
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+
+                <div class="market reveal">
+                    <span>Taiwan</span>
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+
+                <div class="market reveal">
+                    <span>Korea</span>
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+
+                <div class="market reveal">
+                    <span>Japan</span>
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+
+                <div class="market reveal">
+                    <span>Asia</span>
+                    <i class="fa-solid fa-earth-asia"></i>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-box reveal">
+
+
+            <h2>
+
+                Let's build smarter
+
+                <span>
+                    business solutions.
+                </span>
+
+            </h2>
+
+
+            <a
+                href="contact.html"
+                class="cta-button"
+            >
+
+                Talk to Vizion
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+
+        <div class="footer-top">
+
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="footer-logo"
+                >
+
+                    <img
+                        src="images/logo.png"
+                        alt="Vizion Pte Ltd"
+                    >
+
+                </a>
+
+
+                <p>
+
+                    Smart automation, manufacturing
+                    experience and global business solutions.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="index.html#products">
+                    Products
+                </a>
+
+                <a href="index.html#expertise">
+                    Expertise
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span id="year"></span>
+                Vizion Pte Ltd. All Rights Reserved.
+            </span>
+
+            <span>
+                Vision. Innovation. Vizion.
+            </span>
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+    /* =========================================
+       YEAR
+    ========================================= */
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+    /* =========================================
+       MOBILE MENU
+    ========================================= */
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    mobileMenu.addEventListener("click", () => {
+
+        navLinks.classList.toggle("open");
+
+        const icon =
+            mobileMenu.querySelector("i");
+
+        if (navLinks.classList.contains("open")) {
+
+            icon.className =
+                "fa-solid fa-xmark";
+
+        } else {
+
+            icon.className =
+                "fa-solid fa-bars";
+
+        }
+
+    });
+
+
+    /* =========================================
+       SCROLL REVEAL
+    ========================================= */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+        new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+    revealElements.forEach(element => {
+
+        revealObserver.observe(element);
+
+    });
+
+</script>
+
+
+</body>
+
+</html>

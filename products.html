@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Vending Machine | Vizion Pte Ltd</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        /* ======================================================
+           RESET
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f6f7f9;
+            color: #071a31;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+
+        /* ======================================================
+           NAVBAR
+        ====================================================== */
+
+        .navbar {
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid #e8ebef;
+        }
+
+        .nav-inner {
+            width: min(1180px, calc(100% - 40px));
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            width: 145px;
+            max-height: 52px;
+            object-fit: contain;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: #52606f;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.25s ease;
+        }
+
+        .back-btn i {
+            color: #d69b32;
+        }
+
+        .back-btn:hover {
+            color: #071a31;
+            transform: translateX(-4px);
+        }
+
+
+        /* ======================================================
+           PRODUCT
+        ====================================================== */
+
+        .product-section {
+            min-height: calc(100vh - 78px);
+
+            display: flex;
+            align-items: center;
+
+            padding: 70px 0 90px;
+        }
+
+        .container {
+            width: min(1180px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        .product-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+            align-items: center;
+        }
+
+
+        /* ======================================================
+           VISUAL
+        ====================================================== */
+
+        .product-visual {
+            position: relative;
+
+            min-height: 500px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            opacity: 0;
+
+            animation: visualIn 0.9s ease forwards;
+        }
+
+        @keyframes visualIn {
+
+            from {
+                opacity: 0;
+                transform: translateX(-25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+        }
+
+        .visual-bg {
+            position: absolute;
+
+            width: 430px;
+            height: 430px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #e9edf2
+                );
+
+            box-shadow:
+                0 30px 80px
+                rgba(7, 26, 49, 0.08);
+
+            animation:
+                backgroundPulse
+                5s ease-in-out infinite;
+        }
+
+        .visual-bg::before {
+            content: "";
+
+            position: absolute;
+            inset: 25px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(7, 26, 49, 0.06);
+        }
+
+        .visual-bg::after {
+            content: "";
+
+            position: absolute;
+            inset: 70px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(214, 155, 50, 0.15);
+        }
+
+        @keyframes backgroundPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.025);
+            }
+
+        }
+
+        .product-image {
+            position: relative;
+            z-index: 3;
+
+            width: 86%;
+            max-height: 450px;
+
+            object-fit: contain;
+
+            filter:
+                drop-shadow(
+                    0 30px 25px
+                    rgba(0,0,0,0.14)
+                );
+
+            animation:
+                productFloat
+                4s ease-in-out infinite;
+        }
+
+        @keyframes productFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+        }
+
+
+        /* Small floating tags */
+
+        .float-tag {
+            position: absolute;
+            z-index: 5;
+
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 10px 13px;
+
+            background:
+                rgba(255,255,255,0.88);
+
+            backdrop-filter: blur(12px);
+
+            border:
+                1px solid
+                rgba(7,26,49,0.07);
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 12px 30px
+                rgba(7,26,49,0.08);
+
+            color: #52606f;
+
+            font-size: 10px;
+            font-weight: 600;
+
+            animation:
+                tagFloat
+                4.5s ease-in-out infinite;
+        }
+
+        .float-tag i {
+            color: #d69b32;
+        }
+
+        .tag-one {
+            top: 23%;
+            left: 0;
+        }
+
+        .tag-two {
+            right: 0;
+            bottom: 25%;
+
+            animation-delay: 0.7s;
+        }
+
+        @keyframes tagFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-7px);
+            }
+
+        }
+
+
+        /* ======================================================
+           INFORMATION
+        ====================================================== */
+
+        .product-info {
+            opacity: 0;
+
+            transform: translateY(25px);
+
+            animation:
+                contentIn
+                0.8s ease forwards;
+
+            animation-delay: 0.15s;
+        }
+
+        @keyframes contentIn {
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-bottom: 18px;
+
+            color: #b37a20;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+
+            width: 32px;
+            height: 2px;
+
+            background: #d69b32;
+        }
+
+        h1 {
+            margin-bottom: 22px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size:
+                clamp(42px, 5vw, 66px);
+
+            line-height: 1.03;
+
+            letter-spacing: -3px;
+        }
+
+        h1 span {
+            display: block;
+            color: #d69b32;
+        }
+
+        .description {
+            max-width: 570px;
+
+            margin-bottom: 34px;
+
+            color: #687584;
+
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+
+        /* ======================================================
+           FEATURE CARDS
+        ====================================================== */
+
+        .features {
+            display: grid;
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+            margin-bottom: 30px;
+        }
+
+        .feature {
+            min-height: 120px;
+
+            padding: 20px;
+
+            background: white;
+
+            border:
+                1px solid #e4e8ed;
+
+            border-radius: 15px;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-6px);
+
+            border-color:
+                rgba(214,155,50,0.45);
+
+            box-shadow:
+                0 15px 35px
+                rgba(7,26,49,0.08);
+        }
+
+        .feature-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-bottom: 10px;
+        }
+
+        .feature-icon {
+            width: 36px;
+            height: 36px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: #f5ead7;
+
+            color: #b87919;
+
+            transition: 0.3s ease;
+        }
+
+        .feature:hover .feature-icon {
+            background: #d69b32;
+            color: white;
+
+            transform:
+                rotate(-6deg) scale(1.05);
+        }
+
+        .feature h3 {
+            font-family:
+                "Manrope", sans-serif;
+
+            font-size: 14px;
+        }
+
+        .feature p {
+            color: #7a8693;
+
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+
+        /* ======================================================
+           APPLICATION TAGS
+        ====================================================== */
+
+        .applications {
+            margin-top: 30px;
+            padding-top: 24px;
+
+            border-top:
+                1px solid #e1e5e9;
+        }
+
+        .applications-label {
+            margin-bottom: 13px;
+
+            color: #9aa3ad;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing: 1.6px;
+
+            text-transform: uppercase;
+        }
+
+        .application-list {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+        .application-list span {
+            padding: 8px 13px;
+
+            background: #e9edf1;
+
+            border-radius: 100px;
+
+            color: #5b6775;
+
+            font-size: 11px;
+
+            transition: 0.25s ease;
+        }
+
+        .application-list span:hover {
+            background: #071a31;
+            color: white;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ======================================================
+           ACTIONS
+        ====================================================== */
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 30px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            min-height: 50px;
+
+            padding: 0 22px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            border-radius: 100px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            transition: 0.3s ease;
+        }
+
+        .primary-btn {
+            background: #071a31;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: #d69b32;
+            color: #071a31;
+
+            transform: translateY(-3px);
+        }
+
+        .primary-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .primary-btn:hover i {
+            transform: translateX(4px);
+        }
+
+        .secondary-btn {
+            border:
+                1px solid #d9dee4;
+
+            color: #52606f;
+
+            background: transparent;
+        }
+
+        .secondary-btn:hover {
+            background: white;
+
+            color: #071a31;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* ======================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+            padding: 25px 0;
+
+            background: #071a31;
+
+            color:
+                rgba(255,255,255,0.45);
+        }
+
+        .footer-inner {
+            width:
+                min(1180px, calc(100% - 40px));
+
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 20px;
+
+            font-size: 11px;
+        }
+
+        .footer-inner strong {
+            color: #d69b32;
+            font-weight: 600;
+        }
+
+
+        /* ======================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .product-section {
+                padding-top: 45px;
+            }
+
+            .product-layout {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+            .product-visual {
+                min-height: 400px;
+            }
+
+            .visual-bg {
+                width: 350px;
+                height: 350px;
+            }
+
+            .product-image {
+                max-height: 360px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                height: 68px;
+            }
+
+            .logo img {
+                width: 120px;
+            }
+
+            .back-btn {
+                font-size: 12px;
+            }
+
+            .product-section {
+                min-height: auto;
+
+                padding:
+                    35px 0 60px;
+            }
+
+            .product-visual {
+                min-height: 320px;
+            }
+
+            .visual-bg {
+                width: 270px;
+                height: 270px;
+            }
+
+            .product-image {
+                width: 92%;
+                max-height: 290px;
+            }
+
+            .float-tag {
+                font-size: 9px;
+            }
+
+            .tag-one {
+                left: -5px;
+            }
+
+            .tag-two {
+                right: -5px;
+            }
+
+            h1 {
+                font-size: 43px;
+                letter-spacing: -2px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .feature {
+                min-height: auto;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+
+            .primary-btn,
+            .secondary-btn {
+                width: 100%;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================================
+     NAVBAR
+=========================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-inner">
+
+        <a
+            href="../index.html"
+            class="logo"
+        >
+
+            <img
+                src="../images/logo.png"
+                alt="Vizion Pte Ltd"
+            >
+
+        </a>
+
+
+        <a
+            href="../index.html#products"
+            class="back-btn"
+        >
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Products
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================================
+     PRODUCT
+=========================================================== -->
+
+<main class="product-section">
+
+    <div class="container">
+
+        <div class="product-layout">
+
+
+            <!-- PRODUCT IMAGE -->
+
+            <div class="product-visual">
+
+                <div class="visual-bg"></div>
+
+
+                <div class="float-tag tag-one">
+
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                    Self-Service
+
+                </div>
+
+
+                <div class="float-tag tag-two">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    24/7 Access
+
+                </div>
+
+
+                <img
+                    src="../images/products/vending.png"
+                    alt="Vizion Smart Vending Machine"
+                    class="product-image"
+                >
+
+            </div>
+
+
+
+            <!-- PRODUCT INFO -->
+
+            <div class="product-info">
+
+
+                <div class="eyebrow">
+                    Smart Retail
+                </div>
+
+
+                <h1>
+
+                    Smart
+
+                    <span>
+                        Vending Machine
+                    </span>
+
+                </h1>
+
+
+                <p class="description">
+
+                    A modern self-service vending solution
+                    designed to provide convenient product
+                    access while supporting efficient and
+                    automated retail operations.
+
+                </p>
+
+
+
+                <!-- FEATURES -->
+
+                <div class="features">
+
+
+                    <div class="feature">
+
+                        <div class="feature-top">
+
+                            <div class="feature-icon">
+
+                                <i class="fa-solid fa-store"></i>
+
+                            </div>
+
+                            <h3>
+                                Self-Service
+                            </h3>
+
+                        </div>
+
+                        <p>
+
+                            Allows customers to access
+                            products conveniently without
+                            requiring constant staff support.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="feature">
+
+                        <div class="feature-top">
+
+                            <div class="feature-icon">
+
+                                <i class="fa-solid fa-clock"></i>
+
+                            </div>
+
+                            <h3>
+                                Convenient Access
+                            </h3>
+
+                        </div>
+
+                        <p>
+
+                            Supports product availability
+                            beyond traditional staffed
+                            operating environments.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="feature">
+
+                        <div class="feature-top">
+
+                            <div class="feature-icon">
+
+                                <i class="fa-solid fa-box-open"></i>
+
+                            </div>
+
+                            <h3>
+                                Product Dispensing
+                            </h3>
+
+                        </div>
+
+                        <p>
+
+                            Provides an automated method
+                            for storing and dispensing
+                            selected products.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="feature">
+
+                        <div class="feature-top">
+
+                            <div class="feature-icon">
+
+                                <i class="fa-solid fa-gears"></i>
+
+                            </div>
+
+                            <h3>
+                                Automated Retail
+                            </h3>
+
+                        </div>
+
+                        <p>
+
+                            Helps businesses introduce
+                            more automated and efficient
+                            self-service retail experiences.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- APPLICATIONS -->
+
+                <div class="applications">
+
+                    <div class="applications-label">
+                        Suitable For
+                    </div>
+
+
+                    <div class="application-list">
+
+                        <span>
+                            Retail
+                        </span>
+
+                        <span>
+                            Offices
+                        </span>
+
+                        <span>
+                            Public Spaces
+                        </span>
+
+                        <span>
+                            Commercial Buildings
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BUTTONS -->
+
+                <div class="actions">
+
+
+                    <a
+                        href="mailto:csgsc77@gmail.com?subject=Smart%20Vending%20Machine%20Enquiry"
+                        class="primary-btn"
+                    >
+
+                        Enquire About This Product
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a
+                        href="../index.html#products"
+                        class="secondary-btn"
+                    >
+
+                        View Other Products
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<!-- ==========================================================
+     FOOTER
+=========================================================== -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <span>
+
+            © <span id="year"></span>
+            Vizion Pte Ltd
+
+        </span>
+
+
+        <strong>
+            Vision. Innovation. Vizion.
+        </strong>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+
+</body>
+
+</html>
