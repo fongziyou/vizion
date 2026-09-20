@@ -3355,3 +3355,188 @@ body.cursor-product .cursor-outline {
         transform: translateY(-10px);
     }
 }
+/* ============================================================
+   HOMEPAGE SMART CABINET CARD
+============================================================ */
+
+.product-card-cabinet {
+    grid-column: 1 / -1;
+}
+
+.product-image-cabinet {
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 55%,
+            rgba(41, 101, 162, 0.24),
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            #0d2847,
+            #071b34
+        );
+}
+
+.product-image-cabinet img {
+    width: 94%;
+    max-width: 1150px;
+    max-height: 300px;
+
+    object-fit: contain;
+
+    position: relative;
+    z-index: 3;
+
+    filter:
+        drop-shadow(
+            0 26px 30px
+            rgba(0, 0, 0, 0.32)
+        );
+
+    animation:
+        homeCabinetFloat
+        5s ease-in-out
+        infinite;
+}
+
+@keyframes homeCabinetFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* CIRCLE DECORATION */
+
+.cabinet-home-rings {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 600px;
+    height: 600px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.05);
+
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+.cabinet-home-rings::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 90px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.045);
+
+    border-radius: 50%;
+}
+
+.cabinet-home-rings::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 180px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.04);
+
+    border-radius: 50%;
+}
+
+
+/* INFORMATION */
+
+.cabinet-home-info {
+    min-height: 200px;
+}
+
+.cabinet-home-types {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 15px;
+}
+
+.cabinet-home-types span {
+    padding: 6px 10px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius: 100px;
+
+    color:
+        rgba(255, 255, 255, 0.6);
+
+    font-size: 9px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .product-card-cabinet {
+        grid-column: auto;
+    }
+
+    .product-image-cabinet {
+        min-height: 330px;
+    }
+
+    .product-image-cabinet img {
+        width: 100%;
+        max-height: 235px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .product-image-cabinet {
+        min-height: 280px;
+    }
+
+    .cabinet-home-rings {
+        width: 350px;
+        height: 350px;
+    }
+
+    .cabinet-home-rings::before {
+        inset: 55px;
+    }
+
+    .cabinet-home-rings::after {
+        inset: 110px;
+    }
+
+}

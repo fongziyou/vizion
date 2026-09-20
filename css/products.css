@@ -1,0 +1,2482 @@
+/* ============================================================
+   VIZION
+   PRODUCTS PAGE
+============================================================ */
+
+
+/* ============================================================
+   01. PAGE VARIABLES
+============================================================ */
+
+:root {
+
+    --product-navy-dark: #031020;
+    --product-navy: #061a33;
+    --product-navy-mid: #0b2849;
+    --product-navy-light: #123b66;
+
+    --product-gold: #d59a32;
+    --product-gold-light: #e8b85e;
+
+    --product-white: #ffffff;
+
+    --product-text-muted:
+        rgba(255, 255, 255, 0.55);
+
+    --product-border:
+        rgba(255, 255, 255, 0.09);
+
+    --product-transition:
+        0.35s cubic-bezier(0.22, 1, 0.36, 1);
+
+}
+
+
+/* ============================================================
+   02. BASIC
+============================================================ */
+
+.product-container {
+
+    width:
+        min(
+            calc(100% - 48px),
+            1240px
+        );
+
+    margin:
+        0 auto;
+
+}
+
+
+/* ============================================================
+   03. NAVIGATION
+============================================================ */
+
+.product-site-header {
+
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        1000;
+
+    width:
+        100%;
+
+    background:
+        rgba(255, 255, 255, 0.97);
+
+    backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid
+        rgba(7, 26, 49, 0.08);
+
+    box-shadow:
+        0 8px 30px
+        rgba(7, 26, 49, 0.05);
+
+}
+
+
+.product-nav-container {
+
+    min-height:
+        80px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        32px;
+
+}
+
+
+.product-site-logo {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    flex-shrink:
+        0;
+
+}
+
+
+.product-site-logo img {
+
+    width:
+        190px;
+
+    max-height:
+        55px;
+
+    object-fit:
+        contain;
+
+}
+
+
+.product-desktop-nav {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        34px;
+
+}
+
+
+.product-nav-link {
+
+    position:
+        relative;
+
+    padding:
+        29px 0;
+
+    color:
+        #354152;
+
+    font-size:
+        14px;
+
+    font-weight:
+        600;
+
+    transition:
+        var(--product-transition);
+
+}
+
+
+.product-nav-link::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    bottom:
+        16px;
+
+    width:
+        0;
+
+    height:
+        2px;
+
+    background:
+        var(--product-gold);
+
+    transition:
+        var(--product-transition);
+
+}
+
+
+.product-nav-link:hover,
+.product-nav-link.active {
+
+    color:
+        var(--product-navy);
+
+}
+
+
+.product-nav-link:hover::after,
+.product-nav-link.active::after {
+
+    width:
+        100%;
+
+}
+
+
+/* CTA */
+
+.product-nav-button {
+
+    min-height:
+        50px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        15px;
+
+    padding:
+        0 25px;
+
+    flex-shrink:
+        0;
+
+    border-radius:
+        100px;
+
+    background:
+        var(--product-gold);
+
+    color:
+        var(--product-navy-dark);
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    transition:
+        var(--product-transition);
+
+}
+
+
+.product-nav-button i {
+
+    transition:
+        var(--product-transition);
+
+}
+
+
+.product-nav-button:hover {
+
+    background:
+        var(--product-gold-light);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.product-nav-button:hover i {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* ============================================================
+   04. MOBILE NAVIGATION
+============================================================ */
+
+.product-mobile-btn {
+
+    width:
+        44px;
+
+    height:
+        44px;
+
+    display:
+        none;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        5px;
+
+    background:
+        transparent;
+
+    cursor:
+        pointer;
+
+}
+
+
+.product-mobile-btn span {
+
+    width:
+        22px;
+
+    height:
+        2px;
+
+    background:
+        var(--product-navy-dark);
+
+    transition:
+        var(--product-transition);
+
+}
+
+
+.product-mobile-btn.active span:nth-child(1) {
+
+    transform:
+        translateY(7px)
+        rotate(45deg);
+
+}
+
+
+.product-mobile-btn.active span:nth-child(2) {
+
+    opacity:
+        0;
+
+}
+
+
+.product-mobile-btn.active span:nth-child(3) {
+
+    transform:
+        translateY(-7px)
+        rotate(-45deg);
+
+}
+
+
+.product-mobile-menu {
+
+    position:
+        fixed;
+
+    top:
+        70px;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    z-index:
+        999;
+
+    display:
+        none;
+
+    flex-direction:
+        column;
+
+    padding:
+        25px;
+
+    background:
+        rgba(4, 18, 38, 0.98);
+
+    backdrop-filter:
+        blur(20px);
+
+}
+
+
+.product-mobile-menu.active {
+
+    display:
+        flex;
+
+}
+
+
+.product-mobile-menu a {
+
+    padding:
+        16px 5px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    color:
+        white;
+
+    font-size:
+        16px;
+
+    font-weight:
+        600;
+
+}
+
+
+
+/* ============================================================
+   05. PRODUCTS PAGE BACKGROUND
+============================================================ */
+
+.products-page {
+
+    position:
+        relative;
+
+    min-height:
+        100vh;
+
+    padding:
+        90px 0 120px;
+
+    overflow:
+        hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(35, 95, 151, 0.19),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            145deg,
+            #031020,
+            #061a33 55%,
+            #092746
+        );
+
+}
+
+
+.products-page::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    opacity:
+        0.04;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255, 255, 255, 0.3) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.3) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        80px 80px;
+
+}
+
+
+
+/* ============================================================
+   06. PAGE INTRO
+============================================================ */
+
+.products-intro {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.25fr 0.6fr;
+
+    align-items:
+        end;
+
+    gap:
+        80px;
+
+    margin-bottom:
+        65px;
+
+}
+
+
+.products-eyebrow {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    margin-bottom:
+        22px;
+
+    color:
+        var(--product-gold);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.products-eyebrow span {
+
+    width:
+        42px;
+
+    height:
+        1px;
+
+    background:
+        var(--product-gold);
+
+}
+
+
+.products-intro h1 {
+
+    max-width:
+        800px;
+
+    color:
+        white;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        clamp(
+            48px,
+            6vw,
+            78px
+        );
+
+    font-weight:
+        700;
+
+    line-height:
+        1.02;
+
+    letter-spacing:
+        -4px;
+
+}
+
+
+.products-intro h1 strong {
+
+    display:
+        block;
+
+    color:
+        var(--product-gold);
+
+    font-weight:
+        700;
+
+}
+
+
+.products-intro-description {
+
+    max-width:
+        420px;
+
+    color:
+        rgba(255, 255, 255, 0.52);
+
+    font-size:
+        15px;
+
+    line-height:
+        1.8;
+
+}
+
+
+
+/* ============================================================
+   07. PRODUCT GRID
+============================================================ */
+
+.products-grid {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        24px;
+
+}
+
+
+
+/* ============================================================
+   08. STANDARD PRODUCT CARD
+============================================================ */
+
+.standard-product-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        var(--product-border);
+
+    border-radius:
+        30px;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    transition:
+        var(--product-transition);
+
+}
+
+
+.standard-product-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(213, 154, 50, 0.45);
+
+    box-shadow:
+        0 30px 75px
+        rgba(0, 0, 0, 0.24);
+
+}
+
+
+
+/* ============================================================
+   09. STANDARD PRODUCT IMAGE
+============================================================ */
+
+.standard-product-image {
+
+    position:
+        relative;
+
+    height:
+        390px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        40px;
+
+    overflow:
+        hidden;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.015) 60%
+        );
+
+}
+
+
+.standard-product-image img {
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
+    max-width:
+        88%;
+
+    max-height:
+        305px;
+
+    object-fit:
+        contain;
+
+    filter:
+        drop-shadow(
+            0 25px 35px
+            rgba(0, 0, 0, 0.30)
+        );
+
+    transition:
+        0.7s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+}
+
+
+.standard-product-card:hover
+.standard-product-image img {
+
+    transform:
+        translateY(-8px)
+        scale(1.055);
+
+}
+
+
+
+/* PRODUCT RINGS */
+
+.product-rings {
+
+    position:
+        absolute;
+
+    width:
+        300px;
+
+    height:
+        300px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    border-radius:
+        50%;
+
+}
+
+
+.product-rings::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        45px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.055);
+
+    border-radius:
+        50%;
+
+}
+
+
+.product-rings::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        90px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.04);
+
+    border-radius:
+        50%;
+
+}
+
+
+
+/* ============================================================
+   10. PRODUCT CATEGORY
+============================================================ */
+
+.product-category {
+
+    position:
+        absolute;
+
+    top:
+        25px;
+
+    left:
+        28px;
+
+    z-index:
+        6;
+
+    padding:
+        7px 12px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
+    border-radius:
+        100px;
+
+    background:
+        rgba(4, 18, 38, 0.33);
+
+    backdrop-filter:
+        blur(10px);
+
+    color:
+        rgba(255, 255, 255, 0.66);
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1.4px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+
+/* ============================================================
+   11. PRODUCT HOVER
+============================================================ */
+
+.product-view-overlay {
+
+    position:
+        absolute;
+
+    left:
+        28px;
+
+    right:
+        28px;
+
+    bottom:
+        28px;
+
+    z-index:
+        7;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(15px);
+
+    transition:
+        var(--product-transition);
+
+}
+
+
+.standard-product-card:hover
+.product-view-overlay {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.product-view-overlay > span {
+
+    color:
+        white;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+}
+
+
+.product-view-icon {
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--product-gold);
+
+    color:
+        var(--product-navy-dark);
+
+}
+
+
+
+/* ============================================================
+   12. STANDARD PRODUCT CONTENT
+============================================================ */
+
+.standard-product-content {
+
+    min-height:
+        185px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
+
+    padding:
+        30px 32px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+}
+
+
+.product-number {
+
+    display:
+        block;
+
+    margin-bottom:
+        8px;
+
+    color:
+        var(--product-gold);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+}
+
+
+.standard-product-content h2 {
+
+    margin-bottom:
+        10px;
+
+    color:
+        white;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        25px;
+
+    line-height:
+        1.15;
+
+    letter-spacing:
+        -1px;
+
+}
+
+
+.standard-product-content p {
+
+    max-width:
+        470px;
+
+    color:
+        rgba(255, 255, 255, 0.48);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.product-arrow {
+
+    flex-shrink:
+        0;
+
+    width:
+        50px;
+
+    height:
+        50px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.16);
+
+    border-radius:
+        50%;
+
+    color:
+        white;
+
+    transition:
+        var(--product-transition);
+
+}
+
+
+.standard-product-card:hover
+.product-arrow {
+
+    border-color:
+        var(--product-gold);
+
+    background:
+        var(--product-gold);
+
+    color:
+        var(--product-navy-dark);
+
+    transform:
+        translateX(4px);
+
+}
+
+
+
+/* ============================================================
+   13. SMART CABINET CARD
+============================================================ */
+
+.smart-cabinet-card {
+
+    grid-column:
+        1 / -1;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(213, 154, 50, 0.28);
+
+    border-radius:
+        30px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #0d2847 0%,
+            #071b34 100%
+        );
+
+    transition:
+        var(--product-transition);
+
+}
+
+
+.smart-cabinet-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(213, 154, 50, 0.55);
+
+    box-shadow:
+        0 30px 75px
+        rgba(0, 0, 0, 0.25);
+
+}
+
+
+
+/* ============================================================
+   14. CABINET VISUAL
+============================================================ */
+
+.smart-cabinet-visual {
+
+    position:
+        relative;
+
+    min-height:
+        500px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        75px 35px 38px;
+
+    overflow:
+        hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 48%,
+            rgba(38, 101, 164, 0.22),
+            rgba(15, 50, 87, 0.10) 35%,
+            transparent 70%
+        ),
+
+        linear-gradient(
+            135deg,
+            #0d2847,
+            #071b34
+        );
+
+}
+
+
+
+/* ============================================================
+   15. CABINET BACKGROUND GRID
+============================================================ */
+
+.cabinet-background-grid {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    opacity:
+        0.045;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255, 255, 255, 0.25) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.25) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        70px 70px;
+
+    pointer-events:
+        none;
+
+}
+
+
+
+/* ============================================================
+   16. CABINET RINGS
+============================================================ */
+
+.cabinet-ring {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        48%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.05);
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+}
+
+
+.cabinet-ring-one {
+
+    width:
+        700px;
+
+    height:
+        700px;
+
+}
+
+
+.cabinet-ring-two {
+
+    width:
+        520px;
+
+    height:
+        520px;
+
+}
+
+
+.cabinet-ring-three {
+
+    width:
+        340px;
+
+    height:
+        340px;
+
+}
+
+
+
+/* ============================================================
+   17. CABINET BADGE
+============================================================ */
+
+.smart-cabinet-badge {
+
+    position:
+        absolute;
+
+    top:
+        28px;
+
+    left:
+        30px;
+
+    z-index:
+        10;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    padding:
+        9px 15px;
+
+    border:
+        1px solid
+        rgba(213, 154, 50, 0.25);
+
+    border-radius:
+        100px;
+
+    background:
+        rgba(7, 27, 52, 0.74);
+
+    backdrop-filter:
+        blur(12px);
+
+    color:
+        white;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1.5px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.smart-cabinet-badge i {
+
+    color:
+        var(--product-gold);
+
+}
+
+
+
+/* ============================================================
+   18. CABINET LINEUP
+============================================================ */
+
+.cabinet-lineup {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    width:
+        100%;
+
+    max-width:
+        1200px;
+
+}
+
+
+.cabinet-lineup-image {
+
+    width:
+        100%;
+
+    max-height:
+        310px;
+
+    object-fit:
+        contain;
+
+    filter:
+        drop-shadow(
+            0 28px 32px
+            rgba(0, 0, 0, 0.35)
+        );
+
+    animation:
+        cabinetFloat
+        5s ease-in-out
+        infinite;
+
+}
+
+
+@keyframes cabinetFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-9px);
+
+    }
+
+}
+
+
+
+/* ============================================================
+   19. CABINET NAMES
+============================================================ */
+
+.cabinet-name-row {
+
+    width:
+        100%;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            8,
+            minmax(0, 1fr)
+        );
+
+    align-items:
+        start;
+
+    gap:
+        4px;
+
+    margin-top:
+        18px;
+
+}
+
+
+.cabinet-name {
+
+    min-width:
+        0;
+
+    padding:
+        0 3px;
+
+    text-align:
+        center;
+
+}
+
+
+.cabinet-name strong {
+
+    display:
+        block;
+
+    color:
+        var(--product-gold-light);
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    line-height:
+        1.25;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.cabinet-name span {
+
+    display:
+        block;
+
+    margin-top:
+        4px;
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size:
+        9px;
+
+    font-weight:
+        500;
+
+    line-height:
+        1.3;
+
+}
+
+
+.cabinet-name:nth-child(5) span {
+
+    font-size:
+        8px;
+
+}
+
+
+
+/* ============================================================
+   20. SMART CABINET INFO
+============================================================ */
+
+.smart-cabinet-content {
+
+    padding:
+        40px 42px 43px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    background:
+        rgba(3, 18, 36, 0.12);
+
+}
+
+
+.smart-cabinet-content h2 {
+
+    margin-bottom:
+        14px;
+
+    color:
+        white;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        clamp(
+            30px,
+            4vw,
+            44px
+        );
+
+    line-height:
+        1.08;
+
+    letter-spacing:
+        -2px;
+
+}
+
+
+.smart-cabinet-description {
+
+    max-width:
+        850px;
+
+    margin-bottom:
+        24px;
+
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.75;
+
+}
+
+
+
+/* ============================================================
+   21. CABINET TYPE TAGS
+============================================================ */
+
+.cabinet-type-tags {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        9px;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.cabinet-type-tags span {
+
+    padding:
+        9px 13px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius:
+        100px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size:
+        11px;
+
+    transition:
+        var(--product-transition);
+
+}
+
+
+.cabinet-type-tags span:hover {
+
+    border-color:
+        var(--product-gold);
+
+    color:
+        white;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+
+/* ============================================================
+   22. CABINET BOTTOM ROW
+============================================================ */
+
+.cabinet-bottom-row {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        35px;
+
+    padding-top:
+        25px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+}
+
+
+
+/* ============================================================
+   23. CABINET FEATURES
+============================================================ */
+
+.cabinet-feature-list {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    align-items:
+        center;
+
+    gap:
+        16px 25px;
+
+}
+
+
+.cabinet-feature {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    color:
+        rgba(255, 255, 255, 0.64);
+
+    font-size:
+        11px;
+
+}
+
+
+.cabinet-feature i {
+
+    color:
+        var(--product-gold);
+
+}
+
+
+
+/* ============================================================
+   24. CABINET BUTTON
+============================================================ */
+
+.cabinet-button {
+
+    flex-shrink:
+        0;
+
+    min-height:
+        50px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    padding:
+        0 21px;
+
+    border-radius:
+        100px;
+
+    background:
+        var(--product-gold);
+
+    color:
+        var(--product-navy-dark);
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    transition:
+        var(--product-transition);
+
+}
+
+
+.cabinet-button i {
+
+    transition:
+        var(--product-transition);
+
+}
+
+
+.cabinet-button:hover {
+
+    background:
+        var(--product-gold-light);
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.cabinet-button:hover i {
+
+    transform:
+        translateX(4px);
+
+}
+
+
+
+/* ============================================================
+   25. PRODUCTS BOTTOM
+============================================================ */
+
+.products-bottom {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        40px;
+
+    margin-top:
+        65px;
+
+    padding-top:
+        35px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+}
+
+
+.products-bottom p {
+
+    color:
+        rgba(255, 255, 255, 0.52);
+
+    font-size:
+        14px;
+
+}
+
+
+.products-contact-link {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    padding-bottom:
+        5px;
+
+    border-bottom:
+        1px solid
+        var(--product-gold);
+
+    color:
+        var(--product-gold);
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+}
+
+
+
+/* ============================================================
+   26. FOOTER
+============================================================ */
+
+.product-footer {
+
+    padding:
+        32px 0;
+
+    background:
+        #020b16;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.06);
+
+}
+
+
+.product-footer-inner {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
+
+    color:
+        rgba(255, 255, 255, 0.38);
+
+    font-size:
+        11px;
+
+}
+
+
+.product-footer-inner strong {
+
+    color:
+        var(--product-gold);
+
+}
+
+
+
+/* ============================================================
+   27. RESPONSIVE - 1100
+============================================================ */
+
+@media (max-width: 1100px) {
+
+    .product-desktop-nav {
+
+        gap:
+            20px;
+
+    }
+
+
+    .product-site-logo img {
+
+        width:
+            160px;
+
+    }
+
+
+    .cabinet-name strong {
+
+        font-size:
+            8px;
+
+    }
+
+
+    .cabinet-name span {
+
+        font-size:
+            8px;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   28. RESPONSIVE - 900
+============================================================ */
+
+@media (max-width: 900px) {
+
+    .product-desktop-nav,
+    .product-nav-button {
+
+        display:
+            none;
+
+    }
+
+
+    .product-mobile-btn {
+
+        display:
+            flex;
+
+    }
+
+
+    .products-intro {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            25px;
+
+    }
+
+
+    .products-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .smart-cabinet-card {
+
+        grid-column:
+            auto;
+
+    }
+
+
+    .cabinet-bottom-row {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .cabinet-name-row {
+
+        grid-template-columns:
+            repeat(
+                4,
+                1fr
+            );
+
+        gap:
+            18px 8px;
+
+    }
+
+
+    .cabinet-name strong {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .cabinet-name span {
+
+        font-size:
+            9px;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   29. RESPONSIVE - 650
+============================================================ */
+
+@media (max-width: 650px) {
+
+    .product-container {
+
+        width:
+            calc(100% - 28px);
+
+    }
+
+
+    .product-nav-container {
+
+        min-height:
+            68px;
+
+    }
+
+
+    .product-site-logo img {
+
+        width:
+            145px;
+
+    }
+
+
+    .products-page {
+
+        padding:
+            60px 0 80px;
+
+    }
+
+
+    .products-intro {
+
+        margin-bottom:
+            45px;
+
+    }
+
+
+    .products-intro h1 {
+
+        font-size:
+            44px;
+
+        letter-spacing:
+            -2px;
+
+    }
+
+
+    .standard-product-image {
+
+        height:
+            300px;
+
+        padding:
+            25px;
+
+    }
+
+
+    .standard-product-image img {
+
+        max-height:
+            235px;
+
+    }
+
+
+    .standard-product-content {
+
+        min-height:
+            auto;
+
+        padding:
+            25px 22px;
+
+    }
+
+
+    .standard-product-content h2 {
+
+        font-size:
+            21px;
+
+    }
+
+
+    /* CABINET */
+
+    .smart-cabinet-visual {
+
+        min-height:
+            auto;
+
+        padding:
+            65px 15px 30px;
+
+    }
+
+
+    .cabinet-lineup-image {
+
+        max-height:
+            210px;
+
+    }
+
+
+    .cabinet-ring-one {
+
+        width:
+            400px;
+
+        height:
+            400px;
+
+    }
+
+
+    .cabinet-ring-two {
+
+        width:
+            300px;
+
+        height:
+            300px;
+
+    }
+
+
+    .cabinet-ring-three {
+
+        width:
+            200px;
+
+        height:
+            200px;
+
+    }
+
+
+    .smart-cabinet-badge {
+
+        top:
+            16px;
+
+        left:
+            16px;
+
+        font-size:
+            8px;
+
+    }
+
+
+    .cabinet-name-row {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+        gap:
+            18px 8px;
+
+        margin-top:
+            20px;
+
+    }
+
+
+    .cabinet-name strong {
+
+        font-size:
+            10px;
+
+        white-space:
+            normal;
+
+    }
+
+
+    .cabinet-name span {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .cabinet-name:nth-child(5) span {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .smart-cabinet-content {
+
+        padding:
+            30px 22px 33px;
+
+    }
+
+
+    .smart-cabinet-content h2 {
+
+        font-size:
+            30px;
+
+        letter-spacing:
+            -1px;
+
+    }
+
+
+    .cabinet-feature-list {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            10px;
+
+    }
+
+
+    .cabinet-button {
+
+        width:
+            100%;
+
+    }
+
+
+    .products-bottom,
+    .product-footer-inner {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+    }
+
+}
+.smart-cabinet-visual {
+    position: relative;
+
+    min-height: 420px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 55px 35px 18px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 48%,
+            rgba(38, 101, 164, 0.22),
+            rgba(15, 50, 87, 0.10) 35%,
+            transparent 70%
+        ),
+        linear-gradient(
+            135deg,
+            #0d2847,
+            #071b34
+        );
+}
+
+.smart-cabinet-badge {
+    top: 18px;
+    left: 30px;
+}
+
+.cabinet-lineup-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 28px 32px rgba(0, 0, 0, 0.35)
+        );
+
+    animation:
+        cabinetFloat 5s ease-in-out infinite;
+}
+
+.cabinet-name-row {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+
+    align-items: start;
+    gap: 4px;
+
+    margin-top: 10px;
+
+    transform: translateY(-4px);
+}
+
+.smart-cabinet-content {
+    padding: 24px 42px 34px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    background:
+        rgba(3, 18, 36, 0.12);
+}

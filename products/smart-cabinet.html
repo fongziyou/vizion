@@ -1,0 +1,2407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Smart Tool Management Cabinets | Vizion Pte Ltd
+    </title>
+
+    <meta
+        name="description"
+        content="Explore Vizion smart tool management cabinet models for organised tool storage, access control and industrial inventory management."
+    >
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+
+            background: #061a33;
+            color: #ffffff;
+
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .container {
+            width: min(1180px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border-bottom:
+                1px solid rgba(6, 26, 51, 0.08);
+
+            backdrop-filter: blur(18px);
+        }
+
+        .nav-inner {
+            min-height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .logo img {
+            width: 185px;
+            max-height: 54px;
+
+            object-fit: contain;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            color: #071a31;
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .back-link i {
+            color: #d59a32;
+
+            transition: 0.3s ease;
+        }
+
+        .back-link:hover i {
+            transform: translateX(-4px);
+        }
+
+
+
+        /* =====================================================
+           PAGE
+        ===================================================== */
+
+        .cabinet-page {
+            position: relative;
+
+            min-height: 100vh;
+
+            padding: 75px 0 110px;
+
+            background:
+                radial-gradient(
+                    circle at 75% 10%,
+                    rgba(38, 101, 164, 0.18),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    145deg,
+                    #031020,
+                    #061a33 55%,
+                    #092746
+                );
+        }
+
+        .cabinet-page::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            pointer-events: none;
+
+            opacity: 0.04;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.3) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.3) 1px,
+                    transparent 1px
+                );
+
+            background-size: 80px 80px;
+        }
+
+
+
+        /* =====================================================
+           INTRO
+        ===================================================== */
+
+        .page-intro {
+            position: relative;
+            z-index: 2;
+
+            margin-bottom: 55px;
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 18px;
+
+            color: #d59a32;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+
+            width: 40px;
+            height: 1px;
+
+            background: #d59a32;
+        }
+
+        .page-intro h1 {
+            max-width: 900px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size:
+                clamp(42px, 6vw, 70px);
+
+            line-height: 1.03;
+
+            letter-spacing: -3px;
+        }
+
+        .page-intro h1 span {
+            color: #d59a32;
+        }
+
+        .page-intro p {
+            max-width: 760px;
+
+            margin-top: 20px;
+
+            color:
+                rgba(255,255,255,0.58);
+
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+
+
+        /* =====================================================
+           MODEL NAVIGATION
+        ===================================================== */
+
+        .model-jump {
+            position: relative;
+            z-index: 2;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-bottom: 45px;
+        }
+
+        .model-jump a {
+            padding: 10px 14px;
+
+            border:
+                1px solid rgba(255,255,255,0.12);
+
+            border-radius: 100px;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            color:
+                rgba(255,255,255,0.75);
+
+            font-size: 11px;
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .model-jump a:hover {
+            border-color: #d59a32;
+
+            color: #ffffff;
+
+            transform: translateY(-2px);
+        }
+
+
+
+        /* =====================================================
+           MODEL CARD
+        ===================================================== */
+
+        .model-list {
+            position: relative;
+            z-index: 2;
+
+            display: grid;
+
+            gap: 24px;
+        }
+
+        .model-card {
+            overflow: hidden;
+
+            border:
+                1px solid rgba(255,255,255,0.09);
+
+            border-radius: 26px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(17, 47, 79, 0.98),
+                    rgba(7, 27, 52, 0.98)
+                );
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .model-card:hover {
+            transform: translateY(-4px);
+
+            border-color:
+                rgba(213,154,50,0.38);
+
+            box-shadow:
+                0 24px 60px
+                rgba(0,0,0,0.2);
+        }
+
+        .model-main {
+            display: grid;
+
+            grid-template-columns:
+                0.85fr 1.15fr;
+
+            align-items: center;
+
+            gap: 35px;
+
+            padding: 32px;
+        }
+
+
+
+        /* IMAGE */
+
+        .model-image {
+            position: relative;
+
+            min-height: 300px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(46,108,170,0.18),
+                    transparent 65%
+                );
+        }
+
+        .model-image::before {
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+            height: 280px;
+
+            border:
+                1px solid rgba(255,255,255,0.05);
+
+            border-radius: 50%;
+        }
+
+        .model-image img {
+            position: relative;
+            z-index: 2;
+
+            max-width: 90%;
+            max-height: 265px;
+
+            object-fit: contain;
+
+            filter:
+                drop-shadow(
+                    0 25px 30px
+                    rgba(0,0,0,0.3)
+                );
+
+            transition: 0.4s ease;
+        }
+
+        .model-card:hover
+        .model-image img {
+            transform:
+                translateY(-6px)
+                scale(1.025);
+        }
+
+
+
+        /* CONTENT */
+
+        .model-code {
+            display: inline-flex;
+
+            margin-bottom: 10px;
+
+            color: #d59a32;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+        }
+
+        .model-content h2 {
+            margin-bottom: 8px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size:
+                clamp(25px, 3vw, 36px);
+
+            line-height: 1.1;
+
+            letter-spacing: -1.5px;
+        }
+
+        .model-type {
+            display: inline-block;
+
+            margin-bottom: 18px;
+
+            padding: 7px 11px;
+
+            border:
+                1px solid rgba(213,154,50,0.2);
+
+            border-radius: 100px;
+
+            background:
+                rgba(213,154,50,0.08);
+
+            color: #e8b85e;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .model-content > p {
+            max-width: 650px;
+
+            margin-bottom: 22px;
+
+            color:
+                rgba(255,255,255,0.56);
+
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+
+
+        /* QUICK SPECS */
+
+        .quick-specs {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0,1fr));
+
+            gap: 10px;
+
+            margin-bottom: 22px;
+        }
+
+        .quick-spec {
+            padding: 13px 14px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,0.035);
+        }
+
+        .quick-spec span {
+            display: block;
+
+            margin-bottom: 4px;
+
+            color:
+                rgba(255,255,255,0.4);
+
+            font-size: 9px;
+            font-weight: 600;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+        .quick-spec strong {
+            color: #ffffff;
+
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+
+
+        /* DETAILS BUTTON */
+
+        .details-button {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 10px;
+
+            min-height: 44px;
+
+            padding: 0 17px;
+
+            border: 0;
+            border-radius: 100px;
+
+            background: #d59a32;
+
+            color: #071a31;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+        }
+
+        .details-button:hover {
+            background: #e8b85e;
+
+            transform: translateY(-2px);
+        }
+
+        .details-button i {
+            transition: 0.3s ease;
+        }
+
+        .model-card.open
+        .details-button i {
+            transform: rotate(180deg);
+        }
+
+
+
+        /* =====================================================
+           EXPANDED DETAILS
+        ===================================================== */
+
+        .model-details {
+            max-height: 0;
+
+            overflow: hidden;
+
+            border-top:
+                1px solid transparent;
+
+            transition:
+                max-height 0.5s ease,
+                border-color 0.3s ease;
+        }
+
+        .model-card.open
+        .model-details {
+            max-height: 900px;
+
+            border-top-color:
+                rgba(255,255,255,0.07);
+        }
+
+        .model-details-inner {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0,1fr));
+
+            gap: 15px;
+
+            padding: 28px 32px 32px;
+        }
+
+        .detail-box {
+            padding: 18px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            border-radius: 15px;
+
+            background:
+                rgba(255,255,255,0.03);
+        }
+
+        .detail-box i {
+            margin-bottom: 12px;
+
+            color: #d59a32;
+
+            font-size: 16px;
+        }
+
+        .detail-box h3 {
+            margin-bottom: 7px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 13px;
+        }
+
+        .detail-box p {
+            color:
+                rgba(255,255,255,0.52);
+
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+
+
+        /* =====================================================
+           SHARED FEATURES
+        ===================================================== */
+
+        .shared-features {
+            position: relative;
+            z-index: 2;
+
+            margin-top: 70px;
+            padding-top: 55px;
+
+            border-top:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+        .shared-features h2 {
+            margin-bottom: 12px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size:
+                clamp(30px,4vw,45px);
+
+            letter-spacing: -2px;
+        }
+
+        .shared-features > p {
+            max-width: 720px;
+
+            margin-bottom: 30px;
+
+            color:
+                rgba(255,255,255,0.53);
+
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .feature-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, minmax(0,1fr));
+
+            gap: 15px;
+        }
+
+        .feature-card {
+            padding: 20px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            border-radius: 16px;
+
+            background:
+                rgba(255,255,255,0.035);
+        }
+
+        .feature-card i {
+            margin-bottom: 13px;
+
+            color: #d59a32;
+
+            font-size: 18px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 7px;
+
+            font-size: 13px;
+        }
+
+        .feature-card p {
+            color:
+                rgba(255,255,255,0.48);
+
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .page-cta {
+            position: relative;
+            z-index: 2;
+
+            margin-top: 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            padding: 30px;
+
+            border:
+                1px solid rgba(213,154,50,0.25);
+
+            border-radius: 20px;
+
+            background:
+                rgba(213,154,50,0.06);
+        }
+
+        .page-cta h3 {
+            margin-bottom: 6px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 22px;
+        }
+
+        .page-cta p {
+            color:
+                rgba(255,255,255,0.5);
+
+            font-size: 12px;
+        }
+
+        .cta-button {
+            flex-shrink: 0;
+
+            min-height: 48px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 0 20px;
+
+            border-radius: 100px;
+
+            background: #d59a32;
+            color: #071a31;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            transition: 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #e8b85e;
+
+            transform: translateY(-2px);
+        }
+
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            padding: 30px 0;
+
+            background: #020b16;
+
+            border-top:
+                1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color:
+                rgba(255,255,255,0.38);
+
+            font-size: 11px;
+        }
+
+        .footer-inner strong {
+            color: #d59a32;
+        }
+
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .model-main {
+                grid-template-columns: 1fr;
+            }
+
+            .model-image {
+                min-height: 260px;
+            }
+
+            .model-details-inner {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .feature-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .container {
+                width:
+                    calc(100% - 28px);
+            }
+
+            .logo img {
+                width: 145px;
+            }
+
+            .cabinet-page {
+                padding:
+                    55px 0 80px;
+            }
+
+            .page-intro h1 {
+                font-size: 42px;
+
+                letter-spacing: -2px;
+            }
+
+            .model-main {
+                padding: 20px;
+            }
+
+            .model-details-inner {
+                grid-template-columns: 1fr;
+
+                padding:
+                    22px 20px 25px;
+            }
+
+            .quick-specs {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-cta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cta-button {
+                width: 100%;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="site-header">
+
+    <div class="container nav-inner">
+
+        <a
+            href="../index.html"
+            class="logo"
+        >
+            <img
+                src="../images/logo.png"
+                alt="Vizion Pte Ltd"
+            >
+        </a>
+
+
+        <a
+            href="../products.html"
+            class="back-link"
+        >
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Products
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     PAGE
+===================================================== -->
+
+<main class="cabinet-page">
+
+    <div class="container">
+
+
+        <!-- INTRO -->
+
+        <section class="page-intro">
+
+            <div class="eyebrow">
+                Smart Tool Management
+            </div>
+
+            <h1>
+                Find the right cabinet
+                <span>for your operation.</span>
+            </h1>
+
+            <p>
+                Explore the different Smart Tool Management
+                Cabinet configurations available for industrial
+                tool storage, controlled access, inventory
+                management and material handling.
+            </p>
+
+        </section>
+
+
+
+        <!-- QUICK JUMP -->
+
+        <nav class="model-jump">
+
+            <a href="#h90g60">
+                CX-H90-G60-21
+            </a>
+
+            <a href="#h90">
+                CX-H90-21
+            </a>
+
+            <a href="#h60">
+                CX-H60-21
+            </a>
+
+            <a href="#h50">
+                CX-H50-15
+            </a>
+
+            <a href="#ct64">
+                CX-CT64-21
+            </a>
+
+            <a href="#g60">
+                CX-G60-215
+            </a>
+
+            <a href="#dbg48">
+                CX-DBG48-21
+            </a>
+
+        </nav>
+
+
+
+        <!-- =================================================
+             MODEL LIST
+        ================================================== -->
+
+        <section class="model-list">
+
+
+            <!-- =================================================
+                 CX-H90-G60-21
+            ================================================== -->
+
+            <article
+                class="model-card"
+                id="h90g60"
+            >
+
+                <div class="model-main">
+
+                    <div class="model-image">
+
+                        <img
+                            src="../images/products/cabinets/cx-h90-g60-21.png"
+                            alt="CX-H90-G60-21 Lift Cabinet"
+                        >
+
+                    </div>
+
+
+                    <div class="model-content">
+
+                        <span class="model-code">
+                            CX-H90-G60-21
+                        </span>
+
+                        <h2>
+                            Lift Cabinet
+                        </h2>
+
+                        <span class="model-type">
+                            Smart Tool Cabinet
+                        </span>
+
+                        <p>
+                            High-capacity lift cabinet designed
+                            for managing multiple tool and material
+                            varieties with controlled access.
+                        </p>
+
+
+                        <div class="quick-specs">
+
+                            <div class="quick-spec">
+                                <span>Size</span>
+                                <strong>
+                                    1300 × 965 × 1900 mm
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Weight</span>
+                                <strong>
+                                    510 kg
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Access</span>
+                                <strong>
+                                    Card / Facial Recognition
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Materials</span>
+                                <strong>
+                                    Cutting Tools & Small Parts
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <button class="details-button">
+
+                            View Details
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="model-details">
+
+                    <div class="model-details-inner">
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-boxes-stacked"></i>
+
+                            <h3>
+                                Storage Configuration
+                            </h3>
+
+                            <p>
+                                9 floors × 10 lanes ×
+                                16 compartments.
+                                Configuration can be customised.
+                            </p>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                            <h3>
+                                Suitable Materials
+                            </h3>
+
+                            <p>
+                                Blades, milling cutters,
+                                drill bits, taps and
+                                other small industrial parts.
+                            </p>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-network-wired"></i>
+
+                            <h3>
+                                System Functions
+                            </h3>
+
+                            <p>
+                                Supports multi-network expansion,
+                                system integration and
+                                work-order collection.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 CX-H90-21
+            ================================================== -->
+
+            <article
+                class="model-card"
+                id="h90"
+            >
+
+                <div class="model-main">
+
+                    <div class="model-image">
+
+                        <img
+                            src="../images/products/cabinets/cx-h90-21.png"
+                            alt="CX-H90-21 Lift Cabinet"
+                        >
+
+                    </div>
+
+
+                    <div class="model-content">
+
+                        <span class="model-code">
+                            CX-H90-21
+                        </span>
+
+                        <h2>
+                            Lift Cabinet
+                        </h2>
+
+                        <span class="model-type">
+                            Smart Tool Cabinet
+                        </span>
+
+                        <p>
+                            Compact lift cabinet configuration
+                            designed for organised tool storage
+                            and controlled collection.
+                        </p>
+
+
+                        <div class="quick-specs">
+
+                            <div class="quick-spec">
+                                <span>Size</span>
+                                <strong>
+                                    1050 × 900 × 1950 mm
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Weight</span>
+                                <strong>
+                                    420 kg
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Access</span>
+                                <strong>
+                                    Card / Facial Recognition
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Capacity</span>
+                                <strong>
+                                    Up to 90 varieties
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <button class="details-button">
+
+                            View Details
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="model-details">
+
+                    <div class="model-details-inner">
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-layer-group"></i>
+
+                            <h3>
+                                Freight Aisle
+                            </h3>
+
+                            <p>
+                                9 floors × 10 lanes ×
+                                16 compartments.
+                            </p>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-box"></i>
+
+                            <h3>
+                                Materials
+                            </h3>
+
+                            <p>
+                                Designed for blades,
+                                milling cutters, drill bits,
+                                taps and small parts.
+                            </p>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-diagram-project"></i>
+
+                            <h3>
+                                Integration
+                            </h3>
+
+                            <p>
+                                Supports system integration,
+                                work-order collection and
+                                network expansion.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 CX-H60-21
+            ================================================== -->
+
+            <article
+                class="model-card"
+                id="h60"
+            >
+
+                <div class="model-main">
+
+                    <div class="model-image">
+
+                        <img
+                            src="../images/products/cabinets/cx-h60-21.png"
+                            alt="CX-H60-21 Lift Cabinet"
+                        >
+
+                    </div>
+
+
+                    <div class="model-content">
+
+                        <span class="model-code">
+                            CX-H60-21
+                        </span>
+
+                        <h2>
+                            Lift Cabinet
+                        </h2>
+
+                        <span class="model-type">
+                            Smart Tool Cabinet
+                        </span>
+
+                        <p>
+                            Medium-capacity lift cabinet
+                            suitable for organised storage
+                            of multiple industrial tool types.
+                        </p>
+
+
+                        <div class="quick-specs">
+
+                            <div class="quick-spec">
+                                <span>Size</span>
+                                <strong>
+                                    1250 × 900 × 1850 mm
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Weight</span>
+                                <strong>
+                                    340 kg
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Capacity</span>
+                                <strong>
+                                    60 varieties / 960 pcs
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Access</span>
+                                <strong>
+                                    Card / Facial Recognition
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <button class="details-button">
+
+                            View Details
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="model-details">
+
+                    <div class="model-details-inner">
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-layer-group"></i>
+
+                            <h3>
+                                Freight Aisle
+                            </h3>
+
+                            <p>
+                                6 floors × 10 lanes ×
+                                16 compartments.
+                            </p>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-cubes"></i>
+
+                            <h3>
+                                Tool Variety
+                            </h3>
+
+                            <p>
+                                Supports multiple varieties
+                                including cutters, drill bits,
+                                taps and small parts.
+                            </p>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-network-wired"></i>
+
+                            <h3>
+                                Expandable
+                            </h3>
+
+                            <p>
+                                Can be expanded across
+                                multiple networked cabinets.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 CX-H50-15
+            ================================================== -->
+
+            <article
+                class="model-card"
+                id="h50"
+            >
+
+                <div class="model-main">
+
+                    <div class="model-image">
+
+                        <img
+                            src="../images/products/cabinets/cx-h50-15.png"
+                            alt="CX-H50-15 Spring Cabinet"
+                        >
+
+                    </div>
+
+
+                    <div class="model-content">
+
+                        <span class="model-code">
+                            CX-H50-15
+                        </span>
+
+                        <h2>
+                            Spring Cabinet
+                        </h2>
+
+                        <span class="model-type">
+                            Smart Tool Cabinet
+                        </span>
+
+                        <p>
+                            Spring-based cabinet configuration
+                            designed for controlled dispensing
+                            of tools and industrial materials.
+                        </p>
+
+
+                        <div class="quick-specs">
+
+                            <div class="quick-spec">
+                                <span>Size</span>
+                                <strong>
+                                    950 × 810 × 1580 mm
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Weight</span>
+                                <strong>
+                                    215 kg
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Capacity</span>
+                                <strong>
+                                    50 varieties / 800 pcs
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Access</span>
+                                <strong>
+                                    Card / Facial Recognition
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <button class="details-button">
+
+                            View Details
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="model-details">
+
+                    <div class="model-details-inner">
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-arrows-up-down"></i>
+
+                            <h3>
+                                Spring System
+                            </h3>
+
+                            <p>
+                                Suitable for controlled
+                                tool dispensing using
+                                configurable spring channels.
+                            </p>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-boxes-stacked"></i>
+
+                            <h3>
+                                Materials
+                            </h3>
+
+                            <p>
+                                Supports blades,
+                                milling cutters, drill bits,
+                                taps and small parts.
+                            </p>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-diagram-project"></i>
+
+                            <h3>
+                                System Support
+                            </h3>
+
+                            <p>
+                                Supports network expansion,
+                                integration and work-order collection.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 CX-CT64-21
+            ================================================== -->
+
+            <article
+                class="model-card"
+                id="ct64"
+            >
+
+                <div class="model-main">
+
+                    <div class="model-image">
+
+                        <img
+                            src="../images/products/cabinets/cx-ct64-21.png"
+                            alt="CX-CT64-21 Controllable Drawer Cabinet"
+                        >
+
+                    </div>
+
+
+                    <div class="model-content">
+
+                        <span class="model-code">
+                            CX-CT64-21
+                        </span>
+
+                        <h2>
+                            Controllable Drawer Cabinet
+                        </h2>
+
+                        <span class="model-type">
+                            Smart Tool Cabinet
+                        </span>
+
+                        <p>
+                            Drawer-based cabinet designed
+                            for controlled access to different
+                            tool and material categories.
+                        </p>
+
+
+                        <div class="quick-specs">
+
+                            <div class="quick-spec">
+                                <span>Size</span>
+                                <strong>
+                                    800 × 870 × 1800 mm
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Weight</span>
+                                <strong>
+                                    1200 kg
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Drawer Type</span>
+                                <strong>
+                                    13 compartments / drawer
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Access</span>
+                                <strong>
+                                    Card / Facial Recognition
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <button class="details-button">
+
+                            View Details
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="model-details">
+
+                    <div class="model-details-inner">
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-table-cells-large"></i>
+
+                            <h3>
+                                Drawer Storage
+                            </h3>
+
+                            <p>
+                                Adjustable drawer compartment
+                                configuration for different
+                                tool and material types.
+                            </p>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                            <h3>
+                                Suitable Materials
+                            </h3>
+
+                            <p>
+                                Blades, milling cutters,
+                                drill bits, taps and
+                                industrial small parts.
+                            </p>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-network-wired"></i>
+
+                            <h3>
+                                Network Support
+                            </h3>
+
+                            <p>
+                                Supports multi-network expansion
+                                and system integration.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 CX-G60-215
+            ================================================== -->
+
+            <article
+                class="model-card"
+                id="g60"
+            >
+
+                <div class="model-main">
+
+                    <div class="model-image">
+
+                        <img
+                            src="../images/products/cabinets/cx-g60-215.png"
+                            alt="CX-G60-215 Grid Cabinet"
+                        >
+
+                    </div>
+
+
+                    <div class="model-content">
+
+                        <span class="model-code">
+                            CX-G60-215
+                        </span>
+
+                        <h2>
+                            Grid Cabinet
+                        </h2>
+
+                        <span class="model-type">
+                            Smart Tool Cabinet
+                        </span>
+
+                        <p>
+                            Grid-style storage cabinet
+                            designed for organised access
+                            to individually managed material locations.
+                        </p>
+
+
+                        <div class="quick-specs">
+
+                            <div class="quick-spec">
+                                <span>Size</span>
+                                <strong>
+                                    1050 × 500 × 1950 mm
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Weight</span>
+                                <strong>
+                                    150 kg
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Number of Grids</span>
+                                <strong>
+                                    60
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Access</span>
+                                <strong>
+                                    Card / Facial Recognition
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <button class="details-button">
+
+                            View Details
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="model-details">
+
+                    <div class="model-details-inner">
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-grip"></i>
+
+                            <h3>
+                                Grid Sizes
+                            </h3>
+
+                            <p>
+                                Supports small and larger
+                                configurable grid compartments.
+                            </p>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-box-open"></i>
+
+                            <h3>
+                                Material Capacity
+                            </h3>
+
+                            <p>
+                                A single cabinet can manage
+                                up to 60 material items.
+                            </p>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-gears"></i>
+
+                            <h3>
+                                Standard Functions
+                            </h3>
+
+                            <p>
+                                Network expansion,
+                                system integration and
+                                work-order collection.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 CX-DBG48-21
+            ================================================== -->
+
+            <article
+                class="model-card"
+                id="dbg48"
+            >
+
+                <div class="model-main">
+
+                    <div class="model-image">
+
+                        <img
+                            src="../images/products/cabinets/cx-dbg48-21.png"
+                            alt="CX-DBG48-21 Knife Handle Cabinet"
+                        >
+
+                    </div>
+
+
+                    <div class="model-content">
+
+                        <span class="model-code">
+                            CX-DBG48-21
+                        </span>
+
+                        <h2>
+                            Knife Handle Cabinet
+                        </h2>
+
+                        <span class="model-type">
+                            Smart Tool Cabinet
+                        </span>
+
+                        <p>
+                            Specialised cabinet designed
+                            for organised and controlled
+                            management of knife handles.
+                        </p>
+
+
+                        <div class="quick-specs">
+
+                            <div class="quick-spec">
+                                <span>Size</span>
+                                <strong>
+                                    850 × 550 × 1900 mm
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Weight</span>
+                                <strong>
+                                    108 kg
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Capacity</span>
+                                <strong>
+                                    64 material items
+                                </strong>
+                            </div>
+
+                            <div class="quick-spec">
+                                <span>Suitable For</span>
+                                <strong>
+                                    BT / SK / HSK
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <button class="details-button">
+
+                            View Details
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="model-details">
+
+                    <div class="model-details-inner">
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-toolbox"></i>
+
+                            <h3>
+                                Knife Handle Storage
+                            </h3>
+
+                            <p>
+                                Designed specifically
+                                for knife handle types
+                                including BT, SK and HSK.
+                            </p>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-id-card"></i>
+
+                            <h3>
+                                Access Control
+                            </h3>
+
+                            <p>
+                                Supports optional card swiping
+                                and facial recognition.
+                            </p>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <i class="fa-solid fa-network-wired"></i>
+
+                            <h3>
+                                Integration
+                            </h3>
+
+                            <p>
+                                Supports network expansion,
+                                system integration and
+                                work-order collection.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             SHARED FEATURES
+        ================================================== -->
+
+        <section class="shared-features">
+
+            <div class="eyebrow">
+                System Features
+            </div>
+
+            <h2>
+                More than just storage.
+            </h2>
+
+            <p>
+                The Smart Tool Management system supports
+                access control, inventory monitoring,
+                replenishment workflows and integration
+                with wider manufacturing systems.
+            </p>
+
+
+            <div class="feature-grid">
+
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                    <h3>
+                        Access Control
+                    </h3>
+
+                    <p>
+                        Control material requisition
+                        and user access by employee
+                        or application.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    <h3>
+                        Low Inventory Alert
+                    </h3>
+
+                    <p>
+                        Monitor stock levels and
+                        notify responsible personnel
+                        when inventory is low.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    <h3>
+                        One-Click Replenishment
+                    </h3>
+
+                    <p>
+                        Support replenishment workflows
+                        and improve restocking efficiency.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                    <h3>
+                        Management Dashboard
+                    </h3>
+
+                    <p>
+                        View operational information,
+                        inventory status and tool
+                        management data.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-arrow-rotate-left"></i>
+
+                    <h3>
+                        Return Analysis
+                    </h3>
+
+                    <p>
+                        Review returned and
+                        outstanding cutting tools
+                        and related materials.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-file-signature"></i>
+
+                    <h3>
+                        Work Order Integration
+                    </h3>
+
+                    <p>
+                        Support material selection
+                        and collection according
+                        to work-order requirements.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-plug"></i>
+
+                    <h3>
+                        System Integration
+                    </h3>
+
+                    <p>
+                        Supports integration requirements
+                        such as SRM, ERP, MES,
+                        WMS and PLM.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-sliders"></i>
+
+                    <h3>
+                        Customisation
+                    </h3>
+
+                    <p>
+                        Cabinet colours, logos,
+                        configurations and software
+                        can be customised.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CTA
+        ================================================== -->
+
+        <section class="page-cta">
+
+            <div>
+
+                <h3>
+                    Not sure which cabinet fits your needs?
+                </h3>
+
+                <p>
+                    Contact Vizion and we can discuss
+                    your tool storage and management requirements.
+                </p>
+
+            </div>
+
+
+            <a
+                href="../index.html#contact"
+                class="cta-button"
+            >
+
+                Talk to Vizion
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <span>
+            © <span id="year"></span>
+            Vizion Pte Ltd. All Rights Reserved.
+        </span>
+
+        <strong>
+            Vision. Innovation. Vizion.
+        </strong>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+    const modelCards =
+        document.querySelectorAll(".model-card");
+
+
+    modelCards.forEach(card => {
+
+        const button =
+            card.querySelector(".details-button");
+
+
+        button.addEventListener("click", () => {
+
+            const isOpen =
+                card.classList.contains("open");
+
+
+            modelCards.forEach(item => {
+
+                item.classList.remove("open");
+
+                const itemButton =
+                    item.querySelector(
+                        ".details-button"
+                    );
+
+                itemButton.innerHTML =
+                    `
+                    View Details
+                    <i class="fa-solid fa-chevron-down"></i>
+                    `;
+
+            });
+
+
+            if (!isOpen) {
+
+                card.classList.add("open");
+
+                button.innerHTML =
+                    `
+                    Hide Details
+                    <i class="fa-solid fa-chevron-down"></i>
+                    `;
+
+            }
+
+        });
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
